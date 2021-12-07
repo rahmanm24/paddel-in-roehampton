@@ -1,9 +1,11 @@
 extends layout
 block content
-    h2 #{stand.standName}
-    p #{stand.location}
-    p #{stand.bikes} bikes are available at this stand
+    .container
+        .col-xs-12 
+            h2 #{stand.standName}
+            h3 #{stand.location}
+            p #{stand.bikes} bikes are available at this stand
 
-    a(href='/take-bike/' + stand.standID ) Take Bike 
-    <br>
-    a(href='/return-bike/' + stand.standID ) Return Bike
+            a(href='/take-bike/' + stand.standID ) Take Bike 
+            <br>
+            a(href='/return-bike/' + stand.standID ) Return Bike
