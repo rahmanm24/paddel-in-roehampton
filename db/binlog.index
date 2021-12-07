@@ -9,3 +9,8 @@
 ./binlog.000009
 ./binlog.000010
 ./binlog.000011
+<<<<<<< HEAD
+=======
+./binlog.000012
+./binlog.000013
+>>>>>>> efaaafc1f814c7b7193d0c90951b2c013b503abd
