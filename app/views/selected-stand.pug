@@ -1,9 +1,0 @@
-extends layout
-block content
-    h2 #{stand.standName}
-    p #{stand.location}
-    p #{stand.bikes} bikes are available at this stand
-
-    a(href='/take-bike/' + stand.standID ) Take Bike 
-    <br>
-    a(href='/return-bike/' + stand.standID ) Return Bike
