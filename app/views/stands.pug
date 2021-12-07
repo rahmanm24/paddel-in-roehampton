@@ -2,10 +2,12 @@ extends layout
 block content
     - console.log(data)
     .container
-        .col-xs-12
+        .col-md-12
             h1 Please select your closest bike point from bellow to pick up or return a bike.
-            table(border=1)
+            .col-md-12
                 for item in data 
-                    tr  
-                        td 
-                            a(href='/selected-stand/' + item.standID ) #{item.standName} - #{item.count} bikes available
+                    .col-md-2
+                        a(href='/selected-stand/' + item.standID)
+                            .panel-info
+                                .panel-heading #{item.standName}
+                                .panel-body #{item.count} Bike Avilable at this point
