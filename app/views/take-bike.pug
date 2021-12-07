@@ -1,0 +1,10 @@
+extends layout
+block content
+    h2 Take your bike
+    h2 #{stand.standName}
+    p #{stand.location}
+    p #{stand.bikes} bikes are available at this stand
+    form(action='/authenticate' method='POST')
+        label(for='userID') Enter your ID: 
+        input('name'='userID') 
+        input(type='submit' value='Submit')
