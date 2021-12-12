@@ -10,4 +10,5 @@ block content
         form(action='/authenticate' method='POST')
             label(for='userID') Enter your ID: 
             input('name'='userID') 
+            input( name="standID" value=stand.standID hidden)
             button.btn-success Submit

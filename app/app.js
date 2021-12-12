@@ -1,5 +1,6 @@
 const express = require('express');
 const { Stand } = require("./models/stand");
+const { BikeOperation } = require("./models/bikeoperation");
 
 const app = express();
 
@@ -48,6 +49,12 @@ app.get('/return-bike/:id', function (req, res) {
 
 });
 
+app.post('/hire', function(req,res){
+    params = req.body;
+    var standID = new BikeOperation(params.standID);
+    
+
+})
 
 app.listen(3000, function(){
     console.log("app running on http://127.0.0.1:3000");
