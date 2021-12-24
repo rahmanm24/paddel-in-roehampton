@@ -1,9 +1,9 @@
 const db = require('../services/db');
-const bcrypt = require("bcryptjs");
+
 
 class BikeOperation{
-    standId;
-    userId;
+    standID;
+    userID;
     bikeId;
 
     constructor(standID) {
@@ -12,14 +12,8 @@ class BikeOperation{
 
     async getBikeIdForStand(){
         var sql = "SELECT MIN(Bike.bikeSerial) AS serial FROM Bike WHERE Bike.standID = ?";
-        const result = await db.query(sql, [this.standID]);
-        if (JSON.stringify(result) != '[]') {
-            this.bikeId = result[0].serial;
-            return this.id;
-        }
-        else {
-            return false;
-        }
+        const results = await db.query(sql, [this.standID]);
+        this.bikeId = results[0].serial;
     }
 
     

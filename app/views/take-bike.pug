@@ -7,8 +7,8 @@ block content
         h2 #{stand.standName}
         p #{stand.location}
         p #{stand.bikes} bikes are available at this stand
-        form(action='/authenticate' method='POST')
-            label(for='userID') Enter your ID: 
-            input('name'='userID') 
-            input( name="standID" value=stand.standID hidden)
-            button.btn-success Submit
+        form(action='/hire', method='POST')
+            input(type='hidden' name='standID' value=stand.standID)
+            input(type='text' name='userID')
+            div 
+            input(.btn-success type='submit' value='Submit')

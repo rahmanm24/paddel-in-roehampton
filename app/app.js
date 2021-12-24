@@ -9,6 +9,7 @@ app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.get("/", function(req,res){
@@ -49,11 +50,10 @@ app.get('/return-bike/:id', function (req, res) {
 
 });
 
-app.post('/hire', function(req,res){
-    params = req.body;
-    var standID = new BikeOperation(params.standID);
+app.post('/hire', function(req, res){
+    var params = req.body;
+    console.log(params);
     
-
 })
 
 app.listen(3000, function(){
