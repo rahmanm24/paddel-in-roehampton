@@ -9,7 +9,8 @@ app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
-app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/", function(req,res){
@@ -21,6 +22,14 @@ app.get("/", function(req,res){
     });
 
     //res.json(results);
+})
+
+app.get("/report", function(req, res){
+    res.render('report');
+})
+
+app.get('/admin', function(req, res){
+    res.render('admin');
 })
 
 
@@ -51,8 +60,20 @@ app.get('/return-bike/:id', function (req, res) {
 });
 
 app.post('/hire', function(req, res){
-    var params = req.body;
-    console.log(params);
+    params = req.body;
+    // console.log(params);
+
+    var bikeoperation = new BikeOperation(params.standID);
+    try {
+        bikeoperation.getBikeIdForStand(params.userID).then(Promise => {
+            res.render('hire', {bikeoperation: bikeoperation})
+
+        })
+     } catch (err) {
+         console.error(`Error while adding note `, err.message);
+     }
+
+
     
 })
 

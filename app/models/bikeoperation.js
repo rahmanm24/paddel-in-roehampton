@@ -11,9 +11,14 @@ class BikeOperation{
     }
 
     async getBikeIdForStand(){
-        var sql = "SELECT MIN(Bike.bikeSerial) AS serial FROM Bike WHERE Bike.standID = ?";
+        var sql = "SELECT MIN(Bike.bikeSerial) AS serial FROM Bike WHERE Bike.bikeStandId = ?";
         const results = await db.query(sql, [this.standID]);
         this.bikeId = results[0].serial;
+    }
+
+    async setBikeHire(){
+        var sql = "INSERT INTO BikeHIre(userID, bikeID) VALUES(?,?)";
+        const results = await db.query(sql, [this.userID], [this.bikeId]);
     }
 
     

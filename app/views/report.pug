@@ -1,0 +1,9 @@
+extends layout
+block content
+    .container
+        .col-md-12
+        h3 Please enter the bike number and click submit to report any issue regarding the bike.
+        form(action='/authenticate' method='POST')
+            label(for='bikeID') Enter Bike ID: 
+            input('name'='bikeID') 
+            button.btn-warning Submit

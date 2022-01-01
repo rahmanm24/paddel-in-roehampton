@@ -1,0 +1,17 @@
+extends layout
+block content
+    .container
+        .col-md-12
+
+            h1 Login here
+            form(action='/authenticate' method='POST')
+                label(for='email') Enter your email: 
+                br
+                input('name'='email')
+                br 
+                br
+                label(for='email') Enter your password: 
+                br
+                input('name'='password')
+                br
+                input(type='submit' value='Submit')
