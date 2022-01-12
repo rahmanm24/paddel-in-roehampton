@@ -3,7 +3,9 @@ block content
     .container
         .col-md-12
         h3 Please enter the bike number and click submit to report any issue regarding the bike.
-        form(action='/authenticate' method='POST')
-            label(for='bikeID') Enter Bike ID: 
-            input('name'='bikeID') 
-            button.btn-warning Submit
+        <br>
+        form(action='/thanks' method='POST')
+            input(type='hidden' name='standID' value=stand.standID)
+            label(for='bikeId') Enter Bike ID: 
+            input('name'='bikeId') 
+            input( type='submit' value='Submit')

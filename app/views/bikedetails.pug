@@ -1,0 +1,15 @@
+extends layout
+block content
+    .container
+        .col-xs-12
+            h2 Bike ID: #{bikeDet.bikeSerial}
+            h2 Bike Status: #{bikeDet.bikeStatus}
+
+            form.form-horizontal(action='/upbs', method='POST')
+                input(type='hidden' name='bikeSerial' value=bikeDet.bikeSerial)
+                select.form-control(name='bikeStatus')
+                    option(value="Available") Available
+                    option(value="Issue Reported") Issue Reported
+                <div>
+                <br>
+                input(type='submit' value='Update Status')

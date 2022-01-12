@@ -6,7 +6,8 @@ block content
         h2 #{stand.standName}
         p #{stand.location}
         p #{stand.bikes} bikes are available at this stand
-        form(action='/authenticate' method='POST')
-            label(for='userID') Enter Bike ID: 
-            input('name'='userID') 
-            button.btn-warning Submit
+        form(action='/thanks' method='POST')
+            input(type='hidden' name='standID' value=stand.standID)
+            label(for='bikeId') Enter Bike ID: 
+            input('name'='bikeId') 
+            input( type='submit' value='Submit')

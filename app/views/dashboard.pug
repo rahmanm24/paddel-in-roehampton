@@ -1,0 +1,25 @@
+extends layout
+block content
+    .container
+        .col-xs-12
+
+            br
+            br
+            a(href='/logout') Logout
+            - console.log(data)
+
+            table.table(class=table-responsive)
+                thead 
+                    tr 
+                        th Bike ID 
+                        th Bike Point 
+                        th Bike Status
+                        th Action
+                tbody 
+                    for item in data 
+                        tr 
+                            td #{item.bikeSerial}
+                            td #{item.standName}
+                            td #{item.bikeStatus}
+                            td 
+                                a(href='/bikedetails/' + item.bikeSerial) Update
